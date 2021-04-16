@@ -124,7 +124,7 @@ class Airplane {
    }
 
    speak(){
-     return `Hello, may name is ${this.name}, and I am from ${this.locaiton}.`;
+     return `Hello, may name is ${this.name}, and I am from ${this.location}.`;
    }    
   }
   
@@ -186,12 +186,12 @@ class Airplane {
      return `I love ${this.favSubjects.join(' ')}.`;
    }
    
-   PRAssignment(){
-    return `${this.name} has submitted a PR for ${this.subject}`;
+   PRAssignment(subject){
+    return `${this.name} has submitted a PR for ${subject}`;
    }
 
-   sprintChallenge(){
-    return `${this.name} ${this.subject}`
+   sprintChallenge(subject){
+    return `${this.name} ${subject}`
    }
  }
   
@@ -208,7 +208,20 @@ class Airplane {
           + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
- class ProjectManager {
+ class ProjectManager extends Instructor {
+   constructor(pmAttributes){
+     super(pmAttributes);
+     this.gradClassName = pmAttributes.gradClassName;
+     this.favInstructor = pmAttributes.favInstructor;
+   }
+
+   standUp(slackChannel){
+     return `${this.name} announces to ${slackChannel} @channel standy times!`;
+   }
+
+   debugsCode(student, subject){
+    return `${this.name} debugs ${student.name}'s code on ${subject}`
+   }
      
  }
   /*
