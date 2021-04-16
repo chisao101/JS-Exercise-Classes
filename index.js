@@ -175,13 +175,24 @@ class Airplane {
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
  class Student extends Lambdasian{
-  //  constructor(studentAttributes){
-  //    super(studentAttributes);
-  //    this.previousBackground = studentAttributes.previousBackground;
-  //    this.className = studentAttributes.className;
-  //    this.favSubjects = studentAttributes.favSubjects;
-  //  }
-     
+   constructor(studentAttributes){
+     super(studentAttributes);
+     this.previousBackground = studentAttributes.previousBackground;
+     this.className = studentAttributes.className;
+     this.favSubjects = studentAttributes.favSubjects;
+   }
+
+   listSubjects(){
+     return `I love ${this.favSubjects.join(' ')}.`;
+   }
+   
+   PRAssignment(){
+    return `${this.name} has submitted a PR for ${this.subject}`;
+   }
+
+   sprintChallenge(){
+    return `${this.name} ${this.subject}`
+   }
  }
   
   /*
